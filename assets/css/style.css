@@ -63,6 +63,7 @@ i{
   gap: 0.25rem;
   align-items: baseline;
   flex-wrap: wrap;
+  margin-block-start: 0em;
 }
 
 .name {
