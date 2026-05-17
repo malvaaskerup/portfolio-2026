@@ -92,12 +92,14 @@ i{
   top: 0.5rem;
   right: 2rem;
   z-index: 1000;
+  mix-blend-mode: difference;
 }
 
 .home-button img {
   width: 50px;
   height: auto;
   display: block;
+  filter: invert(1);
 }
 
 /* Container for all slides */
@@ -193,6 +195,11 @@ i{
   transform: scale(0.3);
   z-index: 9999;
 } */
+
+body.ignore-blend #title,
+body.ignore-blend .home-button img {
+  mix-blend-mode: normal !important;
+}
 
 .slide.pink-bg {
   background-color: #F36BA6;
