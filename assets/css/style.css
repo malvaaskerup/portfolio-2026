@@ -1,0 +1,264 @@
+* {
+  box-sizing: border-box;
+}
+
+
+
+body {
+  font-family: "arial", sans;
+  color: white;
+  font-size: 15px;
+  line-height: 17px;
+  background-color: #6A6A6C;
+
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;  /* show underline on hover */
+  text-decoration-color: #ff0000;  /* bright red underline */
+  color: inherit;              /* keep same text color */
+}
+
+
+i{
+  font-style: italic;
+	 text-transform: none;
+}
+
+/* Full-viewport wrapper */
+.main-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+#title {
+  z-index: 99;
+  color: white;
+  margin-top: 1em;
+  margin-left: 1em;
+  display: flex;
+  position: fixed;
+  mix-blend-mode: difference;
+}
+
+.line {
+  display: flex;
+  gap: 0.25rem;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.name {
+  cursor: pointer;
+}
+
+.name:hover {
+  text-decoration: underline;
+  text-decoration-color: #ff0000;
+}
+
+/* hidden by default */
+.about-text {
+  display: none;
+}
+
+/* show when checked */
+#about-toggle:checked ~ .about-text {
+  display: inline;
+}
+
+.home-button {
+  position: fixed;
+  top: 0.5rem;
+  right: 2rem;
+  z-index: 1000;
+}
+
+.home-button img {
+  width: 50px;
+  height: auto;
+  display: block;
+}
+
+/* Container for all slides */
+.images-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Individual slide */
+.slide {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Currently active slide */
+.slide.active {
+  display: flex;
+}
+
+/* Image sizing: based on shorter side of viewport */
+.slide img {
+  display: block;
+  max-width: 70vw;
+  max-height: 70vh;
+  object-fit: contain;
+}
+
+.full-img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.slide img.full-img {
+  width: 100vw;
+  height: 100vh;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+}
+
+.slide img.small {
+  display: block;
+  max-width: 50vw;
+  max-height: 50vh;
+  object-fit: contain;
+}
+
+.slide img.medium {
+  display: block;
+  max-width: 60vw;
+  max-height: 60vh;
+  object-fit: contain;
+}
+
+.slide img.big {
+  display: block;
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+/* Caption: 80% of viewport width, centered */
+.ism-caption {
+  z-index: 9;
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80vw;
+  text-align: center;
+  margin: 0;
+  pointer-events: auto;
+  mix-blend-mode: difference;
+}
+
+/* .ornament {
+  position: fixed;
+  top: 20px;
+  right: 40px;
+  transform-origin: top right;
+  transform: scale(0.3);
+  z-index: 9999;
+} */
+
+.slide.pink-bg {
+  background-color: #F36BA6;
+}
+
+.slide.brown-bg {
+  background-color: #510B14;
+}
+
+.slide.red-bg {
+  background-color: #FF2700;
+}
+
+.slide.green-grey-bg {
+  background-color: #B7B9A8;
+}
+
+.slide.green-bg {
+  background-color: #B0BE9B;
+}
+
+.slide.black-bg {
+  background-color: black;
+}
+
+.slide.purple-bg {
+  background-color: #2E0D31;
+}
+
+.slide.yellow-bg {
+  background-color: #FCF6B6;
+}
+
+.slide.dark-green-bg {
+  background-color: #272500;
+}
+
+.slide.blue-bg {
+  background-color: #0161BF;
+}
+
+.slide.white-bg {
+  background-color: #E0E0E0;
+}
+
+.slide.pink-purple-bg {
+  background-color: #BA55D3;
+}
+
+.slide.earls-green-bg {
+  background-color: #BFBD3C;
+}
+
+
+/* Left/right click zones */
+.nav-zone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50vw;
+  cursor: pointer;
+}
+
+/* left half = previous */
+.nav-prev {
+  left: 0;
+}
+
+/* right half = next */
+.nav-next {
+  right: 0;
+}
+
+img,
+#title {
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+figcaption {
+  cursor: default;
+}

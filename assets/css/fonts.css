@@ -1,0 +1,17 @@
+/* Regular (non-italic) */
+@font-face {
+  font-family: "SimonciniGaramondStd";
+  src: url("../fonts/SimonciniGaramondStd.woff") format("woff");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+/* Italic */
+@font-face {
+  font-family: "SimonciniGaramondStd";
+  src: url("../fonts/SimonciniGaramondStd-Italic.woff") format("woff");
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+}
