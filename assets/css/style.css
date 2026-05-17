@@ -196,11 +196,6 @@ i{
   z-index: 9999;
 } */
 
-body.ignore-blend #title,
-body.ignore-blend .home-button img {
-  mix-blend-mode: normal !important;
-}
-
 .slide.pink-bg {
   background-color: #F36BA6;
 }
