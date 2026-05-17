@@ -176,10 +176,10 @@ i{
 .ism-caption {
   z-index: 9;
   position: absolute;
-  bottom: 10px;
+  bottom: 1em;
   left: 50%;
   transform: translateX(-50%);
-  width: 80%;
+  width: 90%;
   text-align: center;
   margin: 0;
   pointer-events: auto;
