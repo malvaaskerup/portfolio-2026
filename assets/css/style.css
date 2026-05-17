@@ -2,7 +2,9 @@
   box-sizing: border-box;
 }
 
-
+html {
+  background-color: transparent;
+}
 
 body {
   font-family: "arial", sans;
