@@ -9,12 +9,12 @@
     font-style: normal;
 }
 
-@font-face {
+/* @font-face {
     font-family: "U001";
     src: url("../fonts/u001-bol.woff2") format("woff2");
     font-weight: 700;
     font-style: normal;
-}
+} */
 
 html {
   background-color: transparent;
