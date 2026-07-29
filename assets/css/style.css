@@ -2,12 +2,26 @@
   box-sizing: border-box;
 }
 
+@font-face {
+    font-family: "U001";
+    src: url("../fonts/u001-reg (1).woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "U001";
+    src: url("../fonts/u001-bol.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+}
+
 html {
   background-color: transparent;
 }
 
 body {
-  font-family: "arial", sans;
+  font-family: "U001", Arial, sans-serif;
   color: white;
   font-size: 15px;
   line-height: 17px;
@@ -55,6 +69,7 @@ i{
   color: white;
   margin-top: 1em;
   margin-left: 1em;
+  padding-right: 3rem;
   display: flex;
   position: fixed;
   mix-blend-mode: difference;
@@ -80,6 +95,11 @@ i{
 /* hidden by default */
 .about-text {
   display: none;
+  line-height: 17px;
+}
+
+.contact-label {
+  display: inline;
 }
 
 /* show when checked */
@@ -173,6 +193,13 @@ i{
   object-fit: contain;
 }
 
+.slide img.bigger {
+  display: block;
+  max-width: 98%;
+  max-height: 98%;
+  object-fit: contain;
+}
+
 /* Caption: 80% of viewport width, centered */
 .ism-caption {
   z-index: 9;
@@ -248,6 +275,10 @@ i{
   background-color: #BFBD3C;
 }
 
+.slide.blue-grey-bg {
+  background-color: #393B53;
+}
+
 
 /* Left/right click zones */
 .nav-zone {
@@ -277,4 +308,11 @@ img,
 }
 figcaption {
   cursor: default;
+}
+
+@media (max-width: 600px) {
+  .slide img {
+    max-width: 95vw;
+    max-height: 85vh;
+  }
 }
