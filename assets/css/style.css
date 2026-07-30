@@ -85,7 +85,7 @@ em {
 
 .line {
   display: flex;
-  gap: 0.25rem;
+  /* gap: 0.25rem; */
   align-items: baseline;
   flex-wrap: wrap;
   margin: 0;
@@ -93,6 +93,7 @@ em {
 
 .name {
   cursor: pointer;
+  margin-right: 0.35rem;
 }
 
 .name:hover {
@@ -103,6 +104,7 @@ em {
 /* hidden by default */
 .about-text {
   display: none;
+  margin-right: 0.25rem;
 }
 
 .contact-label {
