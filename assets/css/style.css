@@ -55,10 +55,12 @@ a:hover {
 }
 
 
-i{
+i {
+  font-family: "U001", sans-serif;
   font-style: italic;
-	 text-transform: none;
+  font-weight: 400;
 }
+
 
 /* Full-viewport wrapper */
 .main-container {
