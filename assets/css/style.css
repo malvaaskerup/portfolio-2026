@@ -9,19 +9,19 @@
     font-style: normal;
 }
 
-/* @font-face {
+@font-face {
     font-family: "U001";
-    src: url("../fonts/u001-bol.woff2") format("woff2");
-    font-weight: 700;
-    font-style: normal;
-} */
+    src: url("../fonts/u001-ita.woff2") format("woff2");
+    font-weight: 400;
+    font-style: italic;
+}
 
 html {
   background-color: transparent;
 }
 
 body {
-  font-family: "U001", Arial, sans-serif;
+  font-family: "U001", sans-serif;
   font-weight: 400;
   font-synthesis: none;
   color: white;
@@ -100,7 +100,6 @@ i{
 /* hidden by default */
 .about-text {
   display: none;
-  line-height: 17px;
 }
 
 .contact-label {
