@@ -29,6 +29,9 @@ body {
   line-height: 17px;
   background-color: #6A6A6C;
   margin: 0;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html, body {
