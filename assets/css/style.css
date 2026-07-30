@@ -55,7 +55,8 @@ a:hover {
 }
 
 
-i {
+i,
+em {
   font-family: "U001", sans-serif;
   font-style: italic;
   font-weight: 400;
