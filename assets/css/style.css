@@ -50,6 +50,7 @@ a {
 
 a:hover {
   text-decoration: underline;  /* show underline on hover */
+  text-underline-offset: 0.25em;
   text-decoration-color: #ff0000;  /* bright red underline */
   color: inherit;              /* keep same text color */
 }
@@ -98,6 +99,7 @@ em {
 
 .name:hover {
   text-decoration: underline;
+  text-underline-offset: 0.25em;
   text-decoration-color: #ff0000;
 }
 
