@@ -86,10 +86,20 @@ em {
   mix-blend-mode: difference;
 }
 
+/* Flex (not block) so whitespace between the label/span/link in the HTML
+   source doesn't render as a visible gap — flex items ignore anonymous
+   whitespace-only text nodes, plain inline children don't.
+   align-items is flex-end, not baseline: "baseline" makes the browser
+   size this row from the custom U001 font's raw ascent/descent metrics
+   rather than the CSS line-height, which with the real webfont produced
+   a visibly taller row than the fallback font used in local testing —
+   so the gap above "A research-based practice..." rendered larger than
+   the gap above "Contact:" even though both had the same 1em margin.
+   flex-end aligns identically to baseline here (all children share the
+   same font-size/line-height) without triggering that font-metric path. */
 .line {
   display: flex;
-  /* gap: 0.25rem; */
-  align-items: baseline;
+  align-items: flex-end;
   flex-wrap: wrap;
   margin: 0;
 }
@@ -377,7 +387,11 @@ figcaption {
      "Malva Askerup" took up part of the first line, the ENTIRE
      about-text sentence got pushed down to its own line instead of
      packing in more words after it. Switching to normal block/inline
-     flow lets the words reflow together like ordinary text. */
+     flow here lets the words reflow together like ordinary text. This
+     reintroduces the source-whitespace-as-visible-gap behavior, but on
+     mobile .about-text is what follows .name (not the always-visible
+     email link) and that whitespace reads as a normal word-space, so it
+     isn't a problem here the way it was for the desktop .line rule. */
   .line {
     display: block;
   }
