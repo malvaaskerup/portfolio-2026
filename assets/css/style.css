@@ -131,11 +131,8 @@ em {
   position: absolute;
   top: 100%;
   left: 0;
-  /* #title's own padding-right is included in the 100% here (absolutely
-     positioned elements size against the containing block's padding box),
-     so subtract it back out to match .line's actual content width. */
   width: calc(100% - 1rem);
-  margin-top: 1em;
+  margin-top: 0.5em;
   cursor: pointer;
 }
 
