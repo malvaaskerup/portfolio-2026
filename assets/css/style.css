@@ -132,7 +132,7 @@ em {
   top: 100%;
   left: 0;
   width: calc(100% - 1rem);
-  margin-top: 1em;
+  /* margin-top: 1em; */
   cursor: pointer;
 }
 
