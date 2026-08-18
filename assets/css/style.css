@@ -49,7 +49,7 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;  /* show underline on hover */
+  text-decoration: underline;  /* show undxwerline on hover */
   text-underline-offset: 0.25em;
   text-decoration-color: #ff0000;  /* bright red underline */
   color: inherit;              /* keep same text color */
@@ -78,9 +78,11 @@ em {
   color: white;
   margin-top: 1em;
   margin-left: 1em;
-  padding-right: 3rem;
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   position: fixed;
+  width: max-content;
   mix-blend-mode: difference;
 }
 
@@ -114,8 +116,45 @@ em {
 }
 
 /* show when checked */
-#about-toggle:checked ~ .about-text {
+#about-toggle:checked ~ .line .about-text {
   display: inline;
+}
+
+/* longer bio / contact block, hidden until the name is clicked.
+   Positioned out of normal flow and pinned to the parent's width so it
+   never influences #title's own width — it just inherits the width
+   that .line (the "...based in The Hague." line) already established,
+   and wraps at that same length. Clicking anywhere in its plain text
+   (not the links) closes it again, see index.js. */
+.about-details {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  /* #title's own padding-right is included in the 100% here (absolutely
+     positioned elements size against the containing block's padding box),
+     so subtract it back out to match .line's actual content width. */
+  width: calc(100% - 1rem);
+  margin-top: 1em;
+  cursor: pointer;
+}
+
+.about-details p {
+  margin-bottom: 1em;
+}
+
+.about-details p:last-child {
+  margin-bottom: 0;
+}
+
+/* show the detail block when checked */
+#about-toggle:checked ~ .about-details {
+  display: block;
+}
+
+/* hide the inline email once the detail block (which repeats it) is open */
+#about-toggle:checked ~ .line .contact-email {
+  display: none;
 }
 
 .home-button {
@@ -297,7 +336,7 @@ em {
   top: 0;
   bottom: 0;
   width: 50%;
-  cursor: pointer;
+  cursor: e-resize;
 }
 
 /* left half = previous */
@@ -325,5 +364,41 @@ figcaption {
   .slide img {
     max-width: 95vw;
     max-height: 85vh;
+  }
+
+  /* Only the compact name/about-text line sits at the same height as
+     the fixed home-button icon in the top-right corner, so only IT
+     needs to leave room for it — cap #title's width so that line wraps
+     before it gets there. mix-blend-mode stays on #title as-is (same
+     overlap-over-artwork look as desktop, just narrower). */
+  #title {
+    width: auto;
+    max-width: calc(100vw - 7rem);
+  }
+
+  /* Flex was wrapping .name and .about-text as whole units — e.g. once
+     "Malva Askerup" took up part of the first line, the ENTIRE
+     about-text sentence got pushed down to its own line instead of
+     packing in more words after it. Switching to normal block/inline
+     flow lets the words reflow together like ordinary text. */
+  .line {
+    display: block;
+  }
+
+  /* The fold-out sits below the icon's row (it opens underneath the
+     name line), so it doesn't need that same clearance — let it run
+     the full screen width instead of being capped to #title's
+     (narrower) icon-avoiding width. left cancels out #title's own
+     margin-left so the panel starts flush with the true screen edge,
+     then padding-left adds that same 1em back so the text lines up
+     with the header above it instead of running to the screen edge. */
+  .about-details {
+    left: -1em;
+    width: 100vw;
+    padding-left: 1em;
+    padding-right: 1.5rem;
+    box-sizing: border-box;
+    max-height: none;
+    overflow-y: visible;
   }
 }

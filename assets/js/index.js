@@ -36,4 +36,17 @@ document.addEventListener('DOMContentLoaded', function () {
   if (slides.length) {
     slides.forEach((s, i) => s.classList.toggle('active', i === 0));
   }
+
+  // Clicking the plain text of the folded-out about block closes it again
+  // (same as clicking the name); clicking a link inside it still opens
+  // that link normally instead of closing the block.
+  const aboutToggle = document.getElementById('about-toggle');
+  const aboutDetails = document.querySelector('.about-details');
+
+  if (aboutToggle && aboutDetails) {
+    aboutDetails.addEventListener('click', function (e) {
+      if (e.target.closest('a')) return;
+      aboutToggle.checked = false;
+    });
+  }
 });
