@@ -141,7 +141,7 @@ em {
   position: absolute;
   top: 100%;
   left: 0;
-  width: calc(100% - 1rem);
+  width: calc(100% + 3rem);
   margin-top: 1em;
   cursor: pointer;
 }
