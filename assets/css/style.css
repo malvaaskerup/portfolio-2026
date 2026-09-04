@@ -336,6 +336,10 @@ em {
   background-color: #393B53;
 }
 
+.slide.dark-grey-bg {
+  background-color: #2E2D32;
+}
+
 
 /* Left/right click zones */
 .nav-zone {
