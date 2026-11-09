@@ -340,6 +340,18 @@ em {
   background-color: #2E2D32;
 }
 
+.slide.dark-brown-purple-bg {
+  background-color: #614a50;
+}
+
+.slide.dark-washed-blue-bg {
+  background-color: #757b90;
+}
+
+.slide.light-grey-bg {
+  background-color: #CEC9D3;
+}
+
 
 /* Left/right click zones */
 .nav-zone {
